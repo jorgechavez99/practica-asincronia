@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid black;
+}
+
+p{
+
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#formulario{
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+}
+
+input {
+    border: 1px solid black;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+button {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+
+
+
+
+table{
+    border: 1px solid black;
+    gap: 50px;
+    display: flex;
+    justify-content: space-around;
+
+}
+th{
+    padding-left: 50px;
+}
+
+

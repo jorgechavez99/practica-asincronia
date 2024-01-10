@@ -43,15 +43,27 @@ button {
 
 
 
-table{
+thead,tbody{
+    width: 100vw;
     border: 1px solid black;
-    gap: 50px;
-    display: flex;
-    justify-content: space-around;
-
+    
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
-th{
+
+thead th,tbody td{
+
+    padding: 10px;
     padding-left: 50px;
+    padding-right: 50px;
+ 
+    
+}
+
+th {
+    text-transform: uppercase;
+
 }
 
 

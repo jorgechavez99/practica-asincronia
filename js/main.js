@@ -1,6 +1,6 @@
 //capturar los elementos del dom
 const introMatricula = document.querySelector("#introMatricula");
-const comprobar = document.querySelector("#comprobar");
+const comprobar = document.querySelector("#comprobar");// este no lo quiero para nada
 const tablaResultado = document.querySelector("#tablaResultado");
 const formulario = document.querySelector("#formulario")
 const parrafo = document.querySelector("#parrafo")
@@ -68,7 +68,7 @@ const arrayMultas = [
         matricula: "123-b",
     },
     {
-        multa: ["Atropello"],
+        multa: ["Atropello","estacionamiento"],
         matricula: "888-b",
     },
 ];
@@ -91,7 +91,7 @@ formulario.addEventListener('submit', (ev) => {
 //En esta funcion trabajamos con promesas en la cual interactuamos entre 2 bases de datos arrayMultas y arrayCoches
 const buscarMatricula = (reciboMatricula) => {
 
-    const verMatricula = arrayCoches.find((item) => item.matricula == reciboMatricula)?.matricula
+    const verMatricula = arrayCoches.find((item) => item.matricula == reciboMatricula)
     console.log(verMatricula)
     return new Promise((resolve, reject) => {
         if (verMatricula) {
@@ -116,13 +116,14 @@ const buscarMultas = (reciboMatricula) => {
 
 
 const comprobarMatricula = (input) => {
-    // aca hare la validacion con RegeX
+    // aca hare la validacion con RegExp
 
-    const reciboMatricula = input
+    const reciboMatricula = input//darle nombres concretos y no utilizar varios
     
     buscarMatricula(reciboMatricula)
         .then((respuesta) => {
-            matricula = respuesta
+            console.log("primer den",respuesta)
+            matricula = respuesta// no almacenar en varios nombres
             return buscarMultas(reciboMatricula)
         }).then((respuesta) => {
             multa = respuesta
@@ -140,11 +141,11 @@ parrafo.innerHTML='';
 }
 
 // Esta funcion permite añadir los elementos extraidos dentro de una tabla
-const pintarTabla = (matricula,multa) => {
+const pintarTabla = (coche,multa) => {
 
-    const recogeElementos = arrayCoches.find((item) => item.matricula == matricula)
+    
 
-    const {modelo,propietario}=recogeElementos
+    const {matricula,modelo,propietario}=coche
  
     tablaResultado.innerHTML=`<td>${matricula}</td>
                                 <td>${modelo}</td>
